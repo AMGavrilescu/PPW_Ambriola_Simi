@@ -1,0 +1,780 @@
+/* importazione font */
+
+@import url(https://fonts.googleapis.com/css?family=Oswald|Noto+Sans);
+@font-face {
+	font-family: 'Spagheti';
+	src: url('otf/Spagheti-lgxX0.otf');
+}
+
+/* caratteristiche generali */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 16px;
+}
+
+h2 {
+	font-family: "Oswald", sans-serif;
+	font-size: 50px;
+}
+
+/* navbar */
+
+.navbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: space-between;
+}
+
+.navbar-logo {
+	transition: transform 0.5s ease-in-out;
+}
+
+.navbar-logo img {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 12px;
+	height: 3em;
+    line-height: 3em;
+}
+
+.navbar-logo a {
+	font-family: 'Spagheti', serif;
+	text-decoration: none;
+	color: white;
+}
+
+.navbar-links {
+	display: inline-block;
+	vertical-align: middle;
+    line-height: 3em;
+}
+
+.navbar-links a {
+	display: inline-block;
+	padding: 12px;
+	text-decoration: none;
+	color: white;
+	opacity: 0.8;
+}
+
+.navbar-links a:hover,
+.focus {
+	color: black;
+	opacity: 1;
+	background: linear-gradient(to bottom, #F2B705, #F2B705, transparent);
+}
+
+
+/* pagina home */
+
+.container {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background-image: url(img/copertina.gif);
+	background-size: cover;
+	background-position: center;
+	color: white;
+	text-shadow: 2px 2px 4px #000000;
+	z-index: 0;
+}
+
+.text-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.text-left {
+	display: inline-block;
+	opacity: 0;
+	animation: slide-in-left 0.5s ease forwards;
+	animation-delay: 0.5s;
+}
+
+.text-center {
+	display: inline-block;
+	opacity: 0;
+	animation: slide-in-center 0.5s ease forwards;
+	animation-delay: 1s;
+}
+
+.text-right {
+	display: inline-block;
+	opacity: 0;
+	animation: slide-in-right 0.5s ease forwards;
+	animation-delay: 1.5s;
+}
+
+@keyframes slide-in-left {
+	from {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-center {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-right {
+	from {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: whitesmoke;
+}
+
+.testo {
+	width: 80%;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 5%;
+}
+
+.testo p {
+	font-size: 1.7em;
+}
+
+.finestre {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 3%;
+	padding: 50px 0;
+}
+
+.finestra {
+	position: relative;
+	margin: 10px;
+	width: 200px;
+	height: 200px;
+}
+
+.finestra img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 100%;
+	opacity: 0.7;
+	transition: box-shadow 0.5s ease-in-out;
+}
+
+.finestra a {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	line-height: 1.5;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background-color: white;
+	color: #403F34;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 50px;
+	opacity: 0.8;
+}
+
+.finestra a:hover {
+	opacity: 1;
+}
+
+.finestra:hover img {
+	opacity: 1;
+	box-shadow: 0px 5px 5px grey;
+	transition-delay: 0.05s;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+    background-color: #F2B705;
+	padding: 15px;
+}
+
+footer p span {
+	font-family: 'Spagheti', serif;
+	padding: 0;
+}
+
+#about {
+	float: right;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+}
+
+footer a:hover {
+	text-decoration: underline;
+	color: #A65D03;
+}
+
+
+/* pagina storia */
+
+#topBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 30px;
+	padding: 10px;
+	border: 3px solid #F2B705;
+	background-color: white;
+	color: black;
+}
+
+.container#storia {
+	background-image: url(img/spaghetti-a-mano.png);
+	overflow: hidden;
+}
+
+.container#storia .text-right {
+	color: #fbc82f;
+}
+
+.paragrafi,
+.procedimento {
+	max-width: 100%;
+	font-size: 18px;
+}
+
+.sfondo {
+	z-index: 0;
+	position: relative;
+}
+
+.sfondo:nth-child(odd),
+.procedimento p:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+.sfondo:nth-child(even),
+.procedimento p:nth-child(even) {
+	background-color: #ffffff;
+}
+
+.sfondo p,
+.quiz-cont,
+.procedimento p {
+	padding: 3% 20%;
+}
+
+.sfondo h3,
+.sfondo h4,
+.procedimento h3 {
+	padding: 3% 20% 0;
+}
+
+.libro {
+	float: right;
+	margin-left: 10px;
+	height: 200px;
+	box-shadow: 2px 2px 4px grey;
+}
+
+cite a,
+.sottotitolo,
+.caratteristiche h3,
+.galleria h3,
+.sfondo h3,
+.sfondo h4,
+.procedimento h3,
+.box h3 {
+	color: #A65D03;
+}
+
+.slide {
+	position: sticky;
+	top: 0;
+	z-index: -1;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	height: 500px;
+	background-color: #f2f2f2;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.pancetta {
+	position: absolute;
+	height: 100px;
+	bottom: 0;
+	left: 0;
+}
+
+.bottoni {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f2f2f2;
+	padding-bottom: 3%;
+	margin-bottom: 5px;
+}
+
+.bottoni a,
+input[type="button"] {
+	display: inline-block;
+	margin: 0 10px;
+	text-align: center;
+	padding: 10px 20px;
+	border: 5px solid #F2B705;
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	border-radius: 30px;
+	transition: transform 0.5s ease-in-out;
+}
+
+.bottoni a:hover,
+.navbar-logo:hover {
+	transform: scale(1.1);
+}
+
+
+/* pagina ricetta */
+
+.container#ricetta {
+	background-image: url(img/ingredienti-ricetta.jpg);
+	overflow: hidden;
+}
+
+.container#ricetta span {
+	color: #F2B705;
+}
+
+.affiancate {
+	display: flex;
+	justify-content: space-between;
+}
+
+#ingredienti li {
+	margin-left: 7%;
+	list-style: circle;
+	font-weight: bold;
+}
+
+.sinistra {
+	flex: 1;
+	max-width: 400px;
+	background-color: #e5e5e5;
+	padding-top: 3%;
+}
+
+.sinistra > * {
+	padding: 3% 0;
+	margin-left: 7%;
+}
+
+.destra {
+	flex: 3;
+}
+
+.caratteristiche h3,
+.galleria h3 {
+	padding-bottom: 3%;
+}
+
+.galleria p {
+	padding-bottom: 5%;
+}
+
+.caratteristiche ul,
+.box ul {
+	list-style: none;
+}
+
+#foto {
+	border-radius: 100%;
+	box-shadow: 0 0 10px grey;
+}
+
+.procedimento p img {
+	float: right;
+	margin: 0 0 20px 10px;
+	height: 200px;
+	box-shadow: 2px 2px 5px grey;
+}
+
+
+/* pagina quiz */
+
+.container#quiz {
+	background-image: url(img/quiz_sfondo.gif);
+	overflow: hidden;
+}
+
+.quiz {
+	font-size: 18px;
+	line-height: 1.5;
+	margin: 20px 50px;
+	background-color: #f2f2f2;
+}
+
+#numeroDomanda {
+	color: #696969;
+	text-align: center;
+}
+
+#testoDomanda {
+	font-weight: bold;
+}
+
+input[type="radio"] {
+	margin-right: 10px;
+}
+
+#avanti,
+#inizia {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	padding: 10px 20px;
+	border: 3px solid #4CAF50;
+}
+
+#inizia {
+	border: 3px solid #f44336;
+}
+
+#avanti:hover,
+#inizia:hover {
+	color: white;
+	cursor: pointer;
+	background-color: #4CAF50;
+}
+
+#inizia:hover {
+	background-color: #f44336;
+}
+
+#risultato {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#frase {
+	margin-top: 10px;
+}
+
+
+/* pagina about */
+
+.container#info {
+	background-image: url(img/about.gif);
+	color: #F2B705;
+	font-size: 2em;
+}
+
+.about {
+	background: linear-gradient(to bottom, #FFF8DC, #F2B705);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 20px;
+}
+
+.box {
+	background: #FFF;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0px 5px 10px grey;
+}
+
+.box > * {
+	padding: 5% 5% 0 5%;
+}
+
+.liste {
+	padding-top: 0;
+	padding-bottom: 5%;
+}
+
+
+/* media queries */
+
+/* per schermi piccoli tipo smartphone */
+@media screen and (max-width: 767px) {
+
+	/* home */
+	.navbar-logo span {
+		display: none;
+	}
+	.text-wrapper div h2 {
+		font-size: 2em;
+	}
+
+	.testo p {
+		font-size: 1.3em;
+	}
+
+	.finestra img,
+	.finestra a {
+		opacity: 1;
+	}
+
+	.finestra img {
+		box-shadow: 0px 5px 5px grey;
+	}
+
+	footer a {
+		text-decoration: underline;
+	}
+
+	/* ricetta */
+	.affiancate {
+		flex-direction: column;
+	}
+
+	.sinistra {
+		padding: 3% 20%;
+	}
+
+	.sinistra > * {
+		margin-left: 0;
+	}
+
+	.galleria {
+		display: none;
+	}
+
+	.procedimento p img {
+		margin: 10px 0;
+	}
+
+	/* quiz */
+	#avanti {
+		color: white;
+		background-color: #4CAF50;
+	}
+	
+	#inizia {
+		color: white;
+		background-color: #f44336;
+	}
+
+	/* about */
+	.about {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
+	}
+
+	.box p {
+		padding-bottom: 5%;
+	}
+
+	.liste {
+		padding-top: 0;
+		padding-bottom: 5%;
+	}
+}
+/* storia */
+@media (max-width: 600px) {
+	.pancetta {
+		display: none;
+	}
+}
+
+/* per tablet */
+@media (max-width: 991.98px) {
+	/* home */
+	.finestra img,
+	.finestra a {
+		opacity: 1;
+	}
+
+	.finestra img {
+		box-shadow: 0px 5px 5px grey;
+	}
+
+	footer a {
+		text-decoration: underline;
+	}
+
+	/* ricetta */
+	#foto {
+		height: 150px;
+	}
+	
+	.procedimento p img {
+		margin-top: 15px;
+	}
+
+	/* quiz */
+	#avanti {
+		color: white;
+		background-color: #4CAF50;
+	}
+	
+	#inizia {
+		color: white;
+		background-color: #f44336;
+	}
+
+	/* about */
+	.about {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
+	}
+
+	.box p {
+		padding-bottom: 5%;
+	}
+}
+
+/* per schermi grandi */
+@media screen and (min-width: 1600px) {
+	/* home */
+	h2,
+	.text-left h1 {
+		font-size: 80px;
+	}
+	
+	/* navbar */
+	.navbar-logo a {
+		padding: 20px;
+		height: 4em;
+		line-height: 4em;
+	}
+	
+	.navbar-links a {
+		padding: 20px;
+	}
+
+	.navbar-logo a,
+	.navbar-links a,
+	.sinistra,
+	#numeroPersone,
+	.box {
+		font-size: 28px;
+	}
+	
+	/* container */
+	.container {
+		height: calc(100vh - 80px);
+	}
+
+	.container h3 {
+		font-size: 2em;
+	}
+	
+	.text-wrapper {
+		top: 40%;
+	}
+	
+	.testo p {
+		font-size: 2.5em;
+	}
+	
+	.finestre {
+		width: 90%;
+		padding: 100px 0;
+	}
+	
+	.finestra {
+		width: 300px;
+		height: 300px;
+	}
+
+	.finestra a {
+		font-size: 28px;
+	}
+	
+	footer {
+		padding: 30px;
+		font-size: 28px;
+	}
+
+	/* storia */
+	.paragrafi,
+	.procedimento,
+	.quiz-cont,
+	#avanti,
+	#inizia {
+		font-size: 30px;
+	}
+
+	.libro {
+		height: 270px;
+	}
+
+	.slide {
+		height: 800px;
+	}
+
+	.pancetta {
+		height: 150px;
+	}
+
+	/* ricetta */
+	#numeroPersone option {
+		font-size: 0.5em;
+	}
+
+	#foto {
+		height: 300px;
+	}
+	
+	.procedimento p img {
+		height: 350px;
+	}
+}

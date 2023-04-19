@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="it">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Carbonara - Quiz</title>
+      <link rel="icon" type="image/x-icon" href="img/icona.png">
+      <link rel="stylesheet" href="stile.css">
+      <link rel="stylesheet" href="otf/Spagheti-lgxX0.otf">
+      <script src="js/quiz.js"></script>
+   </head>
+
+   <body>
+      <div class="navbar">
+         <div class="navbar-logo">
+            <a href="index.html"><img src="img/logo.gif" alt="Logo del sito"><span>Carbonara</span></a>
+         </div>
+         <div class="navbar-links">
+            <a href="storia.html">Storia</a>
+            <a href="ricetta.html">Ricetta</a>
+            <a href="quiz.html" class="focus">Quiz</a>
+            <a href="about.html">About</a>
+         </div>
+      </div>
+
+      <div class="container" id="quiz">
+         <div class="text-wrapper">
+            <div class="text-left">
+               <h2>Quiz</h2>
+            </div>
+            <div class="text-center">
+               <h3>Sei preparato sul piatto più goloso al mondo? Sei un carbonaro o un americano? &#129488;</h3>
+            </div>
+            <div class="text-right">
+               <h3>La Carbonara ce la mangiamo dopo, prima vediamo quante ne sai! &#128527;</h3>
+            </div>
+         </div>
+      </div>
+
+      <div class="quiz">
+        <div class="quiz-cont">
+            <span id="numeroDomanda"></span>
+            <br>
+            <span id="testoDomanda"></span>
+            <br>
+            <input type="radio" name="risposte" id="risposta0">
+            <span id="testoRisposta0"></span>
+            <br>
+            <input type="radio" name="risposte" id="risposta1">
+            <span id="testoRisposta1"></span>
+            <br>
+            <input type="radio" name="risposte" id="risposta2">
+            <span id="testoRisposta2"></span>
+            <br>
+            <input type="button" value="Avanti" id="avanti">
+            <input type="button" value="Riavvia" id="inizia">            
+            <br>
+            <span id="risultato"></span>
+            <br>
+            <span id="frase"></span>
+            <br>
+        </div>
+     </div>
+
+      <footer>
+         <p>© <span>Carbonara</span> - 
+            <a title="mail" href="mailto:a.gavrilescu@studenti.unipi.it">a.gavrilescu@studenti.unipi.it</a><br>
+         </p>
+         <a id="about" href="about.html">About</a>
+      </footer>
+   </body>
+</html>
